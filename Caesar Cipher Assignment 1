@@ -1,0 +1,67 @@
+import java.io.*;
+import edu.duke.*;
+import org.apache.commons.csv.*;
+/**
+ * Write a description of class CaesarCipher_RB here.
+ *
+ * @Ronae (your name)
+ * @version (a version number or a date)
+ */
+public class CaesarCipher_RB{
+  public boolean isVowel(char ch){  
+    if (ch == 'a' ||ch =='e' ||ch =='i'||ch =='o'||ch =='u'||ch =='A'||ch =='E'||ch =='I'||ch =='O'||ch =='U'){
+       return true;
+    }else{
+     return false;
+      }
+    }
+  public void testIsVowel(){
+        System.out.println("Is 'F' a vowel? "+ isVowel('F'));
+        System.out.println("isVowel ('a') should return true: " + isVowel('a'));
+    }
+  public String replaceVowels(String phrase, char ch){
+     // phrase = "";
+     // if(isVowel('phrase')){
+     //     phrase.toLowercase;
+     //     setCharAt(phrase,ch);
+     //}
+     //if(isVowel('phrase')){
+     //     phrase.toUppercase;
+     //     setCharAt(phrase,ch);
+     //
+    // phrase = "Lets Go!!";
+    // ch = %;
+     StringBuilder newString= new StringBuilder(phrase);
+     
+      for (int i=0; i<phrase.length();i++){
+          if(isVowel(newString.charAt(i))){
+              newString.setCharAt(i, ch);
+        }
+     }  
+     return newString.toString();
+    }
+    public void testreplaceVowels(){
+       System.out.println(replaceVowels("Hello World",'*')); 
+    }
+     public String emphasize(String phrase, char ch){
+    StringBuilder sent = new StringBuilder(phrase);
+    for (int k=0; k<phrase.length(); k++){
+      //sent = phrase.charAt(k)+ sent;
+        if (isVowel(sent.charAt(k))){
+         if (k % 2 == 1){
+          System.out.println("odd");
+          sent.setCharAt(k,'*');
+         }
+         if (k % 2 == 0){
+          System.out.println("even");
+          sent.setCharAt(k,'+');
+         }
+        }
+    }
+    
+    return sent.toString();
+  }
+  public void testEmphasize(){
+      System.out.println(emphasize("Mary Bella Abracadabra", 'a'));
+    }
+}
