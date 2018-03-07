@@ -1,0 +1,50 @@
+import java.io.*;
+import edu.duke.*;
+import org.apache.commons.csv.*;
+/**
+ * Write a description of class CaecaseCipher_2RB here.
+ *
+ * @Ronae (your name)
+ * @version (a version number or a date)
+ */
+public class CaesarCipher_2RB{
+public String encrypt (String input, int key){
+      
+StringBuilder encrypted = new StringBuilder(input);
+for(int i =0; i < encrypted.length();i++){
+char ch = encrypted.charAt(i);
+If(Character.isUpperCase(ch) == true){
+Int cry= alphabet.toUpperCase().indexOf(ch);
+if(cry != -1){
+
+char newChar = shiftedAlphabet.toUpperCase().charAt(idx);
+                   encrypted.setCharAt(i, newChar);
+               }
+
+
+}else{
+               int cry = alphabet.indexOf(currChar);
+               if (cry != -1){
+                   char newChar = shiftedAlphabet.charAt(cry);
+                   encrypted.setCharAt(i, ch);
+               }
+           }
+       }
+       return encrypted.toString();
+ }
+ public void testCaesar(){
+        encrypt(“FIRST LEGION ATTACK EAST FLANK!”, 23);
+        FileResource fr = new FileResource();
+        String message = fr.asString();
+        String encrypted = encrypt(message, key);
+        System.out.println("key is " + key + "\n" + encrypted);
+  }
+  public String encryptTwoKeys(String input, int key1, int key2){
+        
+  }
+ public void testEncryptTwoKeys(){
+    
+  }
+}
+
+
